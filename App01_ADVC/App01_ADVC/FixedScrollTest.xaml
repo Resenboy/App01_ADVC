@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App01_ADVC.FixedScrollTest"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ScrollView x:Name="TheScroll">
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="230"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="800"/>
+                    </Grid.RowDefinitions>
+
+                    <BoxView BackgroundColor="Red"
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     Margin="0,0,0,-5" x:Name="BearImage"/>
+
+                    <StackLayout BackgroundColor="DimGray"
+                     Grid.Row="2"
+                     Grid.Column="0"
+                     Margin="0,-5,0,0">
+                        <Label Text="AAA"/>
+                    </StackLayout>
+
+                </Grid>
+            </ScrollView>
+
+            <StackLayout BackgroundColor="Blue"
+                         ScaleY="1"
+                         TranslationY="1"
+                         HeightRequest="50"
+                     VerticalOptions="Start"
+                     Orientation="Horizontal"
+                     x:Name="TitleText">
+                <Button Text="BBB" BackgroundColor="White" BorderRadius="10" TextColor="Black" HeightRequest="40"></Button>
+                <Button Text="BBB" BackgroundColor="white" HeightRequest="40"></Button>
+            </StackLayout>
+        </Grid>
+
+        <!--<Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="240"/>
+                <RowDefinition Height="230"/>
+            </Grid.RowDefinitions>
+
+            <ScrollView x:Name="TheScroll">
+                <Grid BackgroundColor="Transparent" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="230"/>
+                </Grid.RowDefinitions>
+                <Image x:Name="BearImage" 
+                           Source="bear.jpg"
+                           Aspect="AspectFit"
+                            Grid.Row="0"
+                           />
+                    
+                    <Label LineBreakMode="WordWrap"
+                           Grid.Row="1"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in tincidunt lacus. Proin sem leo, pulvinar a risus non, accumsan tristique quam. Pellentesque quis consectetur risus. Morbi hendrerit quam quis nulla tincidunt mattis. In posuere libero a ante commodo efficitur. Integer tempus, quam at cursus feugiat, ligula elit consequat justo, eu ultricies metus lacus in eros. In at dolor ut turpis aliquet interdum in eget metus. In ullamcorper tincidunt rhoncus. Morbi dolor ex, feugiat et risus eu, volutpat sodales erat. Sed placerat dignissim leo, id dapibus felis posuere ac. Nunc suscipit est ac cursus sodales. Sed et nibh pulvinar, vestibulum enim vitae, venenatis ante. Nulla elit sapien, mollis eu nibh sodales, pretium efficitur neque. In pretium augue a eros pretium vestibulum.
+
+Nunc ut est a risus aliquam placerat ut eget turpis. Nam tristique nulla sit amet ante auctor ornare. Nunc mi ipsum, elementum vitae urna sit amet, varius rutrum massa. Vivamus vitae lorem risus. Fusce pretium commodo vestibulum. Cras fringilla lacinia dui ut vestibulum. Nullam sit amet scelerisque felis. Vestibulum porttitor sagittis posuere.
+
+Donec porta vehicula odio quis sollicitudin. Sed elementum, leo ac dictum aliquam, nunc risus pellentesque libero, id tempus ipsum nulla eu velit. Sed dictum justo ut enim pretium imperdiet. Pellentesque accumsan ligula ac mi luctus commodo. Nulla venenatis, est nec placerat efficitur, metus enim aliquet erat, non accumsan nulla nunc eget mi. In et vulputate purus. Aenean facilisis fermentum mi pretium facilisis. Phasellus ultricies sem tellus, ut efficitur augue efficitur non. Pellentesque id purus consectetur ex facilisis vulputate.
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in tincidunt lacus. Proin sem leo, pulvinar a risus non, accumsan tristique quam. Pellentesque quis consectetur risus. Morbi hendrerit quam quis nulla tincidunt mattis. In posuere libero a ante commodo efficitur. Integer tempus, quam at cursus feugiat, ligula elit consequat justo, eu ultricies metus lacus in eros. In at dolor ut turpis aliquet interdum in eget metus. In ullamcorper tincidunt rhoncus. Morbi dolor ex, feugiat et risus eu, volutpat sodales erat. Sed placerat dignissim leo, id dapibus felis posuere ac. Nunc suscipit est ac cursus sodales. Sed et nibh pulvinar, vestibulum enim vitae, venenatis ante. Nulla elit sapien, mollis eu nibh sodales, pretium efficitur neque. In pretium augue a eros pretium vestibulum.
+
+Nunc ut est a risus aliquam placerat ut eget turpis. Nam tristique nulla sit amet ante auctor ornare. Nunc mi ipsum, elementum vitae urna sit amet, varius rutrum massa. Vivamus vitae lorem risus. Fusce pretium commodo vestibulum. Cras fringilla lacinia dui ut vestibulum. Nullam sit amet scelerisque felis. Vestibulum porttitor sagittis posuere.
+
+Donec porta vehicula odio quis sollicitudin. Sed elementum, leo ac dictum aliquam, nunc risus pellentesque libero, id tempus ipsum nulla eu velit. Sed dictum justo ut enim pretium imperdiet. Pellentesque accumsan ligula ac mi luctus commodo. Nulla venenatis, est nec placerat efficitur, metus enim aliquet erat, non accumsan nulla nunc eget mi. In et vulputate purus. Aenean facilisis fermentum mi pretium facilisis. Phasellus ultricies sem tellus, ut efficitur augue efficitur non. Pellentesque id purus consectetur ex facilisis vulputate."/>
+                </Grid>
+            </ScrollView>
+        
+            <StackLayout x:Name="TitleText"
+                   BackgroundColor="#FF264778"
+                   VerticalOptions="Start" 
+                         Grid.Row="0"
+                    >
+                <Button 
+                            Text="Vai funfar" 
+                        BackgroundColor="Blue" 
+                        HeightRequest="60" 
+                        TextColor="White" 
+                        BorderWidth="1"
+                        WidthRequest="20"
+                        Margin="10,10,10,10"/>
+            </StackLayout>
+        </Grid>-->
+    </ContentPage.Content>
+</ContentPage>

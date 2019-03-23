@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App01_ADVC"
+             xmlns:lib="clr-namespace:App01_ADVC.Lib"
+             xmlns:viewPages="clr-namespace:App01_ADVC"
+             x:Class="App01_ADVC.MainPage"
+             xmlns:template="clr-namespace:App01_ADVC.Templates"
+             xmlns:customs="clr-namespace:App01_ADVC.Customs"
+             xmlns:xf="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms"
+             >
+
+    <!--<ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="LightYellow" />
+            <Setter Property="BorderColor" Value="Blue" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="CornerRadius" Value="15" />
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="0, 4" />
+        </Style>
+
+        <Style x:Key="headerLabel" TargetType="Label">
+            <Setter Property="Margin" Value="0, 8" />
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="TextColor" Value="Blue" />
+        </Style>
+    </ContentPage.Resources>-->
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SeletorTemplate x:Key="SelectorPessoa"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+
+
+
+    <ScrollView Orientation="Vertical">
+
+        <StackLayout VerticalOptions="FillAndExpand" HeightRequest="200">
+            <ScrollView Orientation="Vertical">
+                <StackLayout>
+
+                    <customs:MyImage Source="iconfinder_view"
+                                     BackgroundColor="Black"
+                                     WidthRequest="80"
+                                     HeightRequest="80"></customs:MyImage>
+
+                    <customs:MyFrame HeightRequest="25" 
+                                     BackgroundColor="LightYellow"
+                                     Padding="25, 20, 10, 20">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="iconfinder_Medal" BackgroundColor="Transparent" Aspect="AspectFill"></Image>
+                            <Label Text="Quadro de Medalhas" BackgroundColor="Transparent" FontSize="Medium" TextColor="DarkGray"/>
+                            <Label Text="11" BackgroundColor="Yellow" FontSize="Medium"/>
+                            <Label Text="11" BackgroundColor="Silver" FontSize="Medium" Margin="2,0,0,0"/>
+                            <Label Text="10" BackgroundColor="RosyBrown" FontSize="Medium" Margin="2,0,0,0"/>
+                            <Label Text="32" BackgroundColor="LightGray" FontSize="Medium" TextColor="DarkBlue" Margin="5,0,0,0"/>
+                        </StackLayout>
+                    </customs:MyFrame>
+
+
+                    <!--App004-->
+                    <customs:MyButton Text="Botão Customizado" BackgroundColor="IndianRed"/>
+
+                    <customs:MyEntry Margin="10,0,10,0"></customs:MyEntry>
+
+                    <customs:MyButton Text="Botão Customizado" BackgroundColor="IndianRed"/>
+
+                    <customs:MyEntry ></customs:MyEntry>
+
+                    <customs:MyButton Text="Botão Customizado" BackgroundColor="IndianRed"/>
+
+                    <customs:MyEntry ></customs:MyEntry>
+                </StackLayout>
+            </ScrollView>
+            <!--GroupDisplayBinding="{Binding Titulo}" GroupShortNameBinding="{Binding TituloCurto}"-->
+
+            <!--ItemTemplate="{StaticResource Key=SelectorPessoa}"-->
+            <!--IsGroupingEnabled="True"-->
+            <ListView x:Name="ListaFuncionarios" 
+                  VerticalOptions="FillAndExpand" 
+                  HorizontalOptions="FillAndExpand" 
+                  HeightRequest="300"
+                  HasUnevenRows="True"
+                  IsGroupingEnabled="True">
+
+                <!--<ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="12"
+                                  BackgroundColor="Blue">
+                                <Label Text="The footer"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>-->
+
+                <ListView.Header>
+                    
+                    <ScrollView Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal" 
+                                     HeightRequest="50"
+                                     Margin="10, 10, 10, 10"
+                                     BackgroundColor="DarkBlue">
+
+                            <Button Text="Teste 1" Image="icon_bolt.png" BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked"></Button>
+                            <Button Text="Teste 2" BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked_1"></Button>
+                            <Button Text="Teste 3" BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked_2"></Button>
+                            <Button Text="Teste 4" BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked_3"></Button>
+                            <Button Text="Teste 5" BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked_4"></Button>
+                            <Button Text="Teste 6" BackgroundColor="White" TextColor="Black"></Button>
+
+                        </StackLayout>
+                    </ScrollView>
+                    <!--<viewPages:View1></viewPages:View1>-->
+                </ListView.Header>
+
+                <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <viewPages:ViewCellTextFeed></viewPages:ViewCellTextFeed>
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+
+
+
+
+                <ListView.Footer>
+                    <Label Text="FOOTER!"/>
+                </ListView.Footer>
+
+                <!--<ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="15,0,0,0">
+                            <Label Text="{Binding Titulo}"></Label>
+                            <Label Text="{Binding Descricao}" TextColor="LightGray"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>-->
+
+
+                <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nome}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+            </ListView>
+
+
+            <Entry x:Name="txtNome" Placeholder="Digite seu nome" Text="">
+                <Entry.Behaviors>
+                    <lib:MaiusculoBehavior/>
+                </Entry.Behaviors>
+
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                        <Setter Property="BackgroundColor" Value="CornflowerBlue"/>
+                        <Setter Property="TextColor" Value="White"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <Entry x:Name="txtEmail" Placeholder="Digite o seu Email">
+                <Entry.Triggers>
+                    <EventTrigger Event="TextChanged">
+                        <lib:EmailValidoTrigger/>
+                    </EventTrigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <Button Text="Enviar" TextColor="Black" BackgroundColor="Azure" >
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference txtNome}, Path=Text.Length}" Value="0">
+                        <Setter Property="TextColor" Value="White"/>
+                        <Setter Property="BackgroundColor" Value="Gray"/>
+                        <Setter Property="IsEnabled" Value="False"/>
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+
+        </StackLayout>
+    </ScrollView>
+
+
+</ContentPage>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App01_ADVC.View1">
+    <ContentView.Content>
+        <ScrollView Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" 
+                   HeightRequest="50"
+                   Margin="10, 10, 10, 10"
+                   BackgroundColor="DarkBlue">
+
+                <Button Text="Teste 1" BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked"></Button>
+                <Button Text="Teste 2" BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked_1"></Button>
+                <Button Text="Teste 3" BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked_2"></Button>
+                <Button Text="Teste 4" BackgroundColor="White" TextColor="Black"></Button>
+                <Button Text="Teste 5" BackgroundColor="White" TextColor="Black"></Button>
+                <Button Text="Teste 6" BackgroundColor="White" TextColor="Black"></Button>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>
