@@ -108,46 +108,16 @@ namespace App01_ADVC
         private void Button_Clicked_3(object sender, EventArgs e)
         {
             Navigation.PushAsync(new DemoPage());
-        }
-
-
-        //double _titleTextTop;
-        //private void OnTitleTextSizeChanged(object sender, System.EventArgs e)
-        //{
-        //    FixedStack.SizeChanged -= OnTitleTextSizeChanged;
-
-        //    //As soon as the news header has been repositioned, we can grab the actual screen top position
-        //    _titleTextTop = FixedStack.Y;
-
-        //    //Remark: GetScreenCoordinates will get the actual position on screen instead of the actual position inside the parent
-        //    //_titleTextTop = GetScreenCoordinates(TitleText).Y;
-        //}
-
-        //private void OnBearImageSizeChanged(object sender, System.EventArgs e)
-        //{
-        //    BearImage.SizeChanged -= OnBearImageSizeChanged;
-
-        //    //When the bear image has been loaded, reposition the news header to the bottom of this image
-        //    FixedStack.Margin = new Thickness(0, BearImage.Height - 40, 0, 0);
-        //}
-
-        //private void OnScrollViewPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        //{
-        //    if (e.PropertyName.Equals(ScrollView.ScrollYProperty.PropertyName))
-        //    {
-        //        var scrolled = ((ScrollView)sender).ScrollY;
-        //        System.Diagnostics.Debug.WriteLine($"Y position: {scrolled.ToString()}");
-
-        //        if (scrolled < _titleTextTop)
-        //            FixedStack.TranslationY = (0 - scrolled);
-        //        else
-        //            FixedStack.TranslationY = (0 - _titleTextTop);
-        //    }
-        //}
+        }             
 
         private void Button_Clicked_4(object sender, EventArgs e)
         {
             Navigation.PushAsync(new FixedScrollTest());
+        }
+
+        private async void Button_Clicked_5(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync(true);
         }
     }
 }

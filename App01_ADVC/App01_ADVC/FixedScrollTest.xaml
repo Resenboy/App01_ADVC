@@ -2,21 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App01_ADVC.FixedScrollTest"
+             xmlns:local="clr-namespace:App01_ADVC"
+             xmlns:extended="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling"
              NavigationPage.HasBackButton="False"
-             NavigationPage.HasNavigationBar="False">
-    <ContentPage.Content>
+             NavigationPage.HasNavigationBar="False"
+             xmlns:customs="clr-namespace:App01_ADVC.Customs">
 
+    <ContentPage.BindingContext>
+        <local:MainViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <ScrollView x:Name="TheScroll">
+            <ScrollView x:Name="TheScroll" >
                 <Grid Grid.Row="0" Grid.Column="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="230"/>
                         <RowDefinition Height="50"/>
-                        <RowDefinition Height="800"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
                     <BoxView BackgroundColor="Red"
@@ -28,8 +35,47 @@
                      Grid.Row="2"
                      Grid.Column="0"
                      Margin="0,-5,0,0">
-                        <Label Text="AAA"/>
+
+                        <Label Text="Aqui vai o Scroll Infinito" FontSize="30" TextColor="DeepPink" Margin="20,0" />
+
+                        <customs:MyListView ItemsSource="{Binding Items}" HasUnevenRows="True" >
+
+                            <customs:MyListView.Behaviors>
+                                <extended:InfiniteScrollBehavior IsLoadingMore="{Binding IsBusy}" />
+                            </customs:MyListView.Behaviors>
+
+                            <customs:MyListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid Padding="12">
+                                            <Label Text="{Binding .}" FontSize="30" TextColor="Black" />
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </customs:MyListView.ItemTemplate>
+
+                            <customs:MyListView.Footer>
+                                <Grid Padding="6" IsVisible="{Binding IsBusy}">
+                                    <!-- set the footer to have a zero height when invisible -->
+                                    <Grid.Triggers>
+                                        <Trigger TargetType="Grid" Property="IsVisible" Value="False">
+                                            <Setter Property="HeightRequest" Value="0" />
+                                        </Trigger>
+                                    </Grid.Triggers>
+                                    <!-- the loading content -->
+                                    <Label Text="Loading..." TextColor="DeepPink" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+                                </Grid>
+                            </customs:MyListView.Footer>
+
+                        </customs:MyListView>
+
                     </StackLayout>
+                    <!--<StackLayout BackgroundColor="DimGray"
+                     Grid.Row="2"
+                     Grid.Column="0"
+                     Margin="0,-5,0,0">
+                        <Label Text="AAA"/>
+                    </StackLayout>-->
 
                 </Grid>
             </ScrollView>
@@ -42,7 +88,7 @@
                      Orientation="Horizontal"
                      x:Name="TitleText">
                 <Button Text="BBB" BackgroundColor="White" BorderRadius="10" TextColor="Black" HeightRequest="40"></Button>
-                <Button Text="BBB" BackgroundColor="white" HeightRequest="40"></Button>
+                <Button Text="VOLTAR KO" BackgroundColor="white" BorderRadius="20" HeightRequest="40" Clicked="Button_Clicked"></Button>
             </StackLayout>
         </Grid>
 

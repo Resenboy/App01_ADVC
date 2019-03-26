@@ -54,5 +54,10 @@ namespace App01_ADVC
                     TitleText.TranslationY = (0 - _titleTextTop);
             }
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync(true);
+        }
     }
 }
