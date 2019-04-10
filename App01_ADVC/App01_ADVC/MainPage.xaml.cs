@@ -24,6 +24,8 @@ namespace App01_ADVC
                 },
             };
 
+            lblWelcome.FontFamily = Device.OnPlatform(null, "Bangers-Regular.ttf#Bangers", null);
+
             //TheScroll.PropertyChanged += OnScrollViewPropertyChanged;
             //BearImage.SizeChanged += OnBearImageSizeChanged;
             //FixedStack.SizeChanged += OnTitleTextSizeChanged;
@@ -112,12 +114,17 @@ namespace App01_ADVC
 
         private void Button_Clicked_4(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new FixedScrollTest());
+            Navigation.PushAsync(new ContentViewExample());
         }
 
         private async void Button_Clicked_5(object sender, EventArgs e)
         {
             await Navigation.PopAsync(true);
+        }
+
+        private void Button_Clicked_6(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TabPage());
         }
     }
 }

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App01_ADVC.ContentViewExample">
+	<ContentPage.Content>
+		<StackLayout>
+
+			<CarouselView  x:Name="cvGames"
+                    ItemsSource="{Binding Games}" 
+                    HeightRequest="300"
+					BackgroundColor="LightGray"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="CenterAndExpand">
+				<CarouselView.ItemsLayout>
+					<GridItemsLayout Orientation="Horizontal" SnapPointsAlignment="Center" SnapPointsType="Mandatory"/>
+				</CarouselView.ItemsLayout>
+				<CarouselView.ItemTemplate>
+					<DataTemplate>
+						<Grid RowSpacing="0" ColumnSpacing="0">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="{Binding screenWidth}"/>
+								<ColumnDefinition Width="{Binding screenWidth}" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+							<Label Grid.Column="0" Text="{Binding Nome}"  FontAttributes="Bold"/>
+							<Label Grid.Column="1" Text="{Binding TituloBR}" />
+							<!--<Image Grid.Row="1" Grid.ColumnSpan="2" Source="bear.jpg"/>-->
+						</Grid>
+					</DataTemplate>
+				</CarouselView.ItemTemplate>
+			</CarouselView>
+			<StackLayout VerticalOptions="StartAndExpand">
+				<Slider Minimum="0" Maximum="4" MinimumTrackColor="#01579b" MaximumTrackColor="#01579b" ThumbColor="#9575cd"/>
+			</StackLayout>
+
+
+		</StackLayout>
+
+	</ContentPage.Content>
+</ContentPage>

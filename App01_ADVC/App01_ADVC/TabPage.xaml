@@ -3,12 +3,48 @@
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	x:Class="App01_ADVC.TabPage"
-	BackgroundColor="White">
+	BackgroundColor="White"
+    xmlns:views="clr-namespace:App01_ADVC">
     <ContentPage.Content>
-        <Grid>
-            <Frame Margin="20" OutlineColor="Red" BackgroundColor="Silver">
-                <Label x:Name="Label" Text="This is a Xamarin Forms page {0} defined in Xamarin Forms project" />
+        <Grid BackgroundColor="Gray"
+                  Margin="20,20,20,0"
+                  Padding="20,20,20,0"
+                  HorizontalOptions="Center">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+
+            <BoxView x:Name="page1" BackgroundColor="Red" Grid.Row="0" Grid.Column="0" CornerRadius="30"></BoxView>
+            <BoxView x:Name="page2" BackgroundColor="White" Grid.Row="0" Grid.Column="1" ></BoxView>
+            <BoxView x:Name="page3" BackgroundColor="Blue" Grid.Row="0" Grid.Column="2" ></BoxView>
+
+
+
+            <Frame x:Name="frameColor"
+                   BackgroundColor="Purple" 
+                   Grid.Row="1" Grid.ColumnSpan="3">
+
+                <Frame.Content>
+                    <views:View1></views:View1>
+                </Frame.Content>
+                <Frame.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Right" Swiped="SwipeGestureRecognizer_Swiped"></SwipeGestureRecognizer>
+                    <SwipeGestureRecognizer Direction="Left" Swiped="SwipeGestureRecognizer_Swiped"></SwipeGestureRecognizer>
+                </Frame.GestureRecognizers>
             </Frame>
+
+
+            <Grid.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Right" Swiped="SwipeGestureRecognizer_Swiped"></SwipeGestureRecognizer>
+            </Grid.GestureRecognizers>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

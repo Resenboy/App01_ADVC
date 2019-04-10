@@ -10,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace App01_ADVC
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ViewCellTextFeed : ViewCell
+	public partial class ViewDeTesteTabbed : ContentView
 	{
-		public ViewCellTextFeed ()
+		public ViewDeTesteTabbed ()
 		{
 			InitializeComponent ();
-                  
 		}
 	}
 }

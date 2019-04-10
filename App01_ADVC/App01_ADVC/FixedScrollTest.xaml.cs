@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace App01_ADVC
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class FixedScrollTest : ContentPage
+	public partial class FixedScrollTest : ContentView
 	{
         double _titleTextTop;
 

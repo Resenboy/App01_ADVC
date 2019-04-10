@@ -41,6 +41,9 @@
     <ScrollView Orientation="Vertical">
 
         <StackLayout VerticalOptions="FillAndExpand" HeightRequest="200">
+
+            <Label x:Name="lblWelcome" Text=" Testando a nova fonte no APP" FontSize="Large"></Label>
+            
             <ScrollView Orientation="Vertical">
                 <StackLayout>
 
@@ -68,13 +71,7 @@
 
                     <customs:MyEntry Margin="10,0,10,0"></customs:MyEntry>
 
-                    <customs:MyButton Text="Botão Customizado" BackgroundColor="IndianRed"/>
-
-                    <customs:MyEntry ></customs:MyEntry>
-
-                    <customs:MyButton Text="Botão Customizado" BackgroundColor="IndianRed"/>
-
-                    <customs:MyEntry ></customs:MyEntry>
+                    
                 </StackLayout>
             </ScrollView>
             <!--GroupDisplayBinding="{Binding Titulo}" GroupShortNameBinding="{Binding TituloCurto}"-->
@@ -85,8 +82,7 @@
                   VerticalOptions="FillAndExpand" 
                   HorizontalOptions="FillAndExpand" 
                   HeightRequest="300"
-                  HasUnevenRows="True"
-                  IsGroupingEnabled="True">
+                  HasUnevenRows="True">
 
                 <!--<ListView.HeaderTemplate>
                     <DataTemplate>
@@ -113,6 +109,7 @@
                             <Button Text="Teste 3" BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked_2"></Button>
                             <Button Text="Teste 4" BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked_3"></Button>
                             <Button Text="Teste 5" BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked_4"></Button>
+                            <Button Text="Teste 6" BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked_6"></Button>
                             <Button Text="Voltar KO" BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked_5"></Button>
 
                         </StackLayout>

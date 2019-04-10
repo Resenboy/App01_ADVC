@@ -60,7 +60,7 @@ namespace App01_ADVC.Droid.CustomsRenderers
                 paint.AntiAlias = true;
                 paint.StrokeWidth = 1;
                 paint.SetStyle(Paint.Style.Stroke);
-                paint.Color = global::Android.Graphics.Color.White;
+                paint.Color = global::Android.Graphics.Color.Black;
 
                 canvas.DrawPath(path, paint);
 
